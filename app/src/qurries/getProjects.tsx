@@ -8,6 +8,8 @@ export const getProjects = gql`
       url
       onResume
       onSite
+      startDate
+      endDate
       demo {
         id
         url
