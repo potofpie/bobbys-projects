@@ -24,7 +24,7 @@ interface ItemFlairProps {
 }
 
 const ItemContainer = styled.div.attrs(() => ({
-  className: `transition duration-500 ease-in-out bg-white hover:bg-gray-100 max-w-md py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5`
+  className: `transition duration-500 ease-in-out bg-white  max-w-md py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5`
   }))``
 
 const TitleSection = styled.div.attrs(() => ({
