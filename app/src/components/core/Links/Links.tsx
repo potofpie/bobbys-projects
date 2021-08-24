@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {useQuery} from '@apollo/client'
-import { getBottomLinks } from '../../qurries'
+import { getBottomLinks } from '../../../qurries'
 
 
 export const Links:FC = () => {

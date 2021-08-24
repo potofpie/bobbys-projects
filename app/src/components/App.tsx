@@ -1,18 +1,18 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
 
-import { ProjectItem } from './ProjectItem'
-import { SkillItem } from './SkillItem'
+import { ProjectItem } from './core/ProjectItem'
+import { SkillItem } from './core/SkillItem'
 
 import {useQuery} from '@apollo/client'
-import { Intro } from './Intro'
-import { Links } from './Links'
+import { Intro } from './core/Intro'
+import { Links } from './core/Links'
 import { getProjects } from '../qurries'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 import {terminalButtons, justHacker, skillsImage, serverImage, justHackerCircle, hackerMind }  from '../assets';
 
-import { FadeIn } from './FadeIn'
+import { FadeIn } from './core/FadeIn'
 import './App.scss';
 
 
