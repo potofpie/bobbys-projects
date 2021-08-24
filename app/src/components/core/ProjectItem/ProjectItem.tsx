@@ -1,11 +1,9 @@
-/* This example requires Tailwind CSS v2.0+ */
-// import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
 import { FC } from 'react';
 import styled from 'styled-components';
 import Tooltip from '@material-ui/core/Tooltip';
 
 
-interface ProjectItem {
+interface ProjectItemArgs {
   name: string;
   description: string;
   githubLink: string;
@@ -47,9 +45,8 @@ const Description = styled.p.attrs(() => ({
   }))``
 
 
-interface ItemProps {
-  // setModal: Function;
-  item: ProjectItem;
+interface ProjectItemProps {
+  item: ProjectItemArgs;
 }
 
 
@@ -76,7 +73,7 @@ const ItemFlair: FC<{type: string}> = ({type}) => {
 
 }
 
-export const Item: FC<ItemProps> = ({item}) => {
+export const ProjectItem: FC<ProjectItemProps> = ({item}) => {
   return (
     <ItemContainer>
       <div>
@@ -89,7 +86,6 @@ export const Item: FC<ItemProps> = ({item}) => {
       </div>
       <LinksSection >
         {item?.url && <LinkItem href={item?.url} >Live here! 👀 </LinkItem>}
-
         {item?.githubLink && <LinkItem href={item?.githubLink} >Github 👾 </LinkItem>}
       </LinksSection>
     </ItemContainer>

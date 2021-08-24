@@ -9,20 +9,24 @@ import 'react-typist/dist/Typist.css';
 
 
 const IntroContainer = styled.div.attrs(() => ({
-    className: ` lg:w-1/2 grid grid-cols-1 divide-y divide-white`
+    className: ` lg:w-1/2 grid grid-cols-1 divide-y divide-black `
     }))``
 
-const NameText = styled.h1.attrs(() => ({
-    className: `lg:text-2xl text-xs`
-    }))``
+// const NameText = styled.h1.attrs(() => ({
+//     className: `lg:text-2xl text-xs`
+//     }))``
 
-const TitleText = styled.h2.attrs(() => ({
-    className: `lg:text-base font-light text-xs`
-    }))``
+// const TitleText = styled.h2.attrs(() => ({
+//     className: `lg:text-base font-light text-xs`
+//     }))``
     
 
 const IntroText = styled.h3.attrs(() => ({
     className: `py-4 font-light lg:text-base text-xs`
+    }))``
+
+const LinksText = styled.h3.attrs(() => ({
+    className: `py-4 font-light lg:text-xs text-xs`
     }))``
 
 export const Intro: FC = () => {
@@ -30,19 +34,14 @@ export const Intro: FC = () => {
 
   return (
     <IntroContainer>
-        <FadeIn delay={500} duration={450}>
-            <NameText>Bobby Christopher</NameText>
-            <TitleText>Software Engineer</TitleText>
-            <br />
-        </FadeIn>
-        <FadeIn delay={1000} duration={450}>
-            <br />
             <IntroText>
                 <ReactMarkdown>
                     {data?.summaries[0]?.welcometext}
                 </ReactMarkdown>
             </IntroText>
-        </FadeIn>
+            <LinksText>
+                Looking for a contractor? 👷‍♂️
+            </LinksText>
     </IntroContainer>
   )
 }
