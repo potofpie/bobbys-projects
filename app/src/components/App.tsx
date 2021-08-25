@@ -5,7 +5,9 @@ import { ProjectItem } from './core/ProjectItem'
 import { SkillItem } from './core/SkillItem'
 
 import {useQuery} from '@apollo/client'
-import { Intro } from './core/Intro'
+import { Intro } from './Sections/Intro'
+import { Skills } from './Sections/Skills'
+
 import { Links } from './core/Links'
 import { getProjects } from '../qurries'
 import ScrollAnimation from 'react-animate-on-scroll'
@@ -13,12 +15,11 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import {terminalButtons, justHacker, skillsImage, serverImage, justHackerCircle, hackerMind }  from '../assets';
 
 import { FadeIn } from './core/FadeIn'
-import './App.scss';
 
 
 
 const AppContainer = styled.div.attrs(() => ({
-  className: `flex flex-1 flex-col custom-tan`
+  className: `flex flex-1 flex-col custom-tan justify-center items-center `
   }))``
 
 const YScroll = styled.div.attrs(() => ({
@@ -72,49 +73,32 @@ export const App: FC = () => {
 
         <img src={justHackerCircle} style={{height: '100%', margin: 10}}/> <p><b>  Bobby Christopher </b> - Full Stack Software Engineer </p>
         </Header>
-        <Top>
-          <div className="flex flex-1 flex-row	">
-            <TopLeft>
+
               <Intro/>
-            </TopLeft>
-            <TopRight >
-              <FadeIn delay={500} duration={450}>
-                <Logo alt={'serverImage'} src={hackerMind} />
-              </FadeIn>
-            </TopRight>
-          </div>
-        </Top>
+              <Skills/>
 
 
 
 
 
-        <Top>
-          <div className="flex flex-1 flex-row	">
-            <TopLeft>
-                <Logo alt={'skillsImage'} src={skillsImage} />
-              </TopLeft>
-          <TopRight >
-             <YScroll>
 
-              {projects?.map((item: any) => <SkillItem item={item}/>)}
-             </YScroll>
-            </TopRight>
-          </div>
 
-        </Top>
+
 
         <Top>
 
 
              <TopLeft>
+
              <XScroll>
               {projects?.map((item: any) => <ProjectItem item={item}/>)}
              </XScroll>
               </TopLeft>
+              Projects
           <TopRight >
                 <Logo alt={'serverImage'} src={serverImage} />
             </TopRight>
+            
 
 
 

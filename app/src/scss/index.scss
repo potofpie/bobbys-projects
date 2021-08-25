@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './glitch.scss';
+@import './App.scss';
+
+
+.icon-link:hover {
+  filter: brightness(0.5)                                  
+}
 
 #root, body, html {
   display: flex;

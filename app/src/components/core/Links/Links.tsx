@@ -1,11 +1,11 @@
 import React, {FC} from 'react';
 import {useQuery} from '@apollo/client'
-import { getBottomLinks } from '../../../qurries'
+import { getSocialLinks } from '../../../qurries'
 
 
 export const Links:FC = () => {
 
-  const {data} = useQuery(getBottomLinks)
+  const {data} = useQuery(getSocialLinks)
   const profiles =  data?.profiles.filter((p: any ) => p?.onSite)
   return (          
         <>

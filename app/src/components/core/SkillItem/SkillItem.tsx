@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import Tooltip from '@material-ui/core/Tooltip';
+import Divider from '@material-ui/core/Divider';
+
 
 
 interface ProjectItemArgs {
@@ -22,61 +24,40 @@ interface ItemFlairProps {
 }
 
 const ItemContainer = styled.div.attrs(() => ({
-  className: `transition duration-500 ease-in-out bg-white  max-w-md py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5`
-  }))``
-
-const TitleSection = styled.div.attrs(() => ({
-    className: `flex flex-1 text-gray-800 text-xl font-semibold flex-row`
-    }))``
-  
-
-const LinksSection = styled.div.attrs(() => ({
-  className: `flex justify-end mt-4`
+  className: `text-left transition duration-500 ease-in-out bg-white  max-w-md py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5 w-96 		`
   }))``
 
 
-const LinkItem = styled.a.attrs(() => ({
-  className: `text-sm font-medium text-indigo-400`
-  }))``
-  
 
-const Description = styled.p.attrs(() => ({
-  className: `text-sm text-gray-600`
-  }))``
-
-
-interface ProjectItemProps {
-  item: ProjectItemArgs;
+interface SkillItemProps {
+  skillCategory: any;
 }
 
+const getSkillColor = (level: string)  => {
+  switch(level){
+    case 'beginner':
+      return 'text-red-500'
+    case 'intermediate':
+      return 'text-yellow-500'
+    case 'advanced':
+      return 'text-green-500'
+    case 'master':
+      return 'text-blue-500'
 
-const BaseItemFlair: FC<ItemFlairProps> = ({color, message}) => {
-  return (
-    <div className='flex flex-1 p-2 justify-start items-center'>
-        <Tooltip title={message}>
-          <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg">
-            <circle fill={color} cx="5" cy="5" r="5"/>
-          </svg>
-      </Tooltip>
-    </div>
-  )
-
-}
-
-const ItemFlair: FC<{type: string}> = ({type}) => {
-  switch(type) {
-    case 'active':
-      return <BaseItemFlair color="#84de02" message={"Active!"} />
-    default:
-      return <div/>
   }
 
 }
 
-export const SkillItem: FC<ProjectItemProps> = ({item}) => {
+
+export const SkillItem: FC<SkillItemProps> = ({skillCategory}) => {
   return (
     <ItemContainer>
-      Javascript
+      <p>{skillCategory?.name}</p>
+      <p className={`${getSkillColor(skillCategory?.level)}	font-light text-xs	`} >{skillCategory?.level}</p>
+      <Divider style={{margin: 10}}/>
+        {skillCategory?.skills.map((skill: any) => <li className={`text-gray-500 font-light text-xs`}>  {skill?.skillName} </li>)}
+
+
     </ItemContainer>
   )
 }

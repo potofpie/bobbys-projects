@@ -1,6 +1,6 @@
 import React, { Fragment,  FC } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { messageFrameDemo } from '../../assets/index'
+import { messageFrameDemo } from '../../../assets'
 
 interface ModalProps {
     modal :boolean;
