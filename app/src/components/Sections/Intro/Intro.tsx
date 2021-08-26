@@ -56,6 +56,7 @@ export const Intro: FC = () => {
                 <LinksText>
                     Looking for a contractor? 👷‍♂️
                 </LinksText>
+                
                 <div className={`
                         flex 
                         flex-1 
@@ -64,6 +65,7 @@ export const Intro: FC = () => {
                         items-center 
 
                 `}>
+                <Divider style={{marginTop: 15}}/>
 
                     {links?.profiles?.map((l : any) => 
                         <Tooltip title={l.name} > 

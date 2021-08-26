@@ -5,13 +5,10 @@ import { serverImage } from '../../../assets'
 import { getProjects } from '../../../qurries'
 import {useQuery} from '@apollo/client'
 import { ProjectItem } from '../../core/ProjectItem'
+import Carousel from 'react-material-ui-carousel'
 
 
 
-const XScroll = styled.div.attrs(() => ({
-   className: `flex flex-1 p-2 flex-row items-center overflow-x-scroll  max-h-96 max-w-lg	` 
-   }))``
- 
 
 const IntroContainer = styled.h3.attrs(() => ({
    className: 
@@ -33,7 +30,7 @@ export const Projects: FC = () => {
       <SectionContainer>
          <IntroContainer>
 
-         <XScroll>
+         <Carousel>
               {projects?.map((item: any) => <ProjectItem item={item}/>)}
               {/* {<ProjectItem item={projects[0]}/> }
               {<ProjectItem item={projects[0]}/> }
@@ -41,7 +38,7 @@ export const Projects: FC = () => {
               {<ProjectItem item={projects[0]}/> } */}
 
 
-         </XScroll>
+         </Carousel>
 
          </IntroContainer>
          <UndrawImage src={serverImage} />

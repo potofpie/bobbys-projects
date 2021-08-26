@@ -5,11 +5,7 @@ import { SectionContainer, HorizonalSectionItems, UndrawImage } from '../../layo
 import { getSkills } from '../../../qurries';
 import { skillsImage } from '../../../assets'
 import { SkillItem } from '../../core/SkillItem'
-
-
-const YScroll = styled.div.attrs(() => ({
-   className: `flex flex-1 p-2 flex-col items-center overflow-y-scroll max-h-72	` 
-   }))``
+import Carousel from 'react-material-ui-carousel'
 
 const IntroContainer = styled.h3.attrs(() => ({
     className: 
@@ -31,10 +27,10 @@ const IntroContainer = styled.h3.attrs(() => ({
          <UndrawImage src={skillsImage} />
             <IntroContainer>
 
-            <YScroll>
+            <Carousel>
 
                 {data?.skillCategories?.map((item: any) => <SkillItem skillCategory={item}/>)}
-            </YScroll>
+            </Carousel>
 
             </IntroContainer>
 
