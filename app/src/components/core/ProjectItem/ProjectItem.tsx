@@ -22,8 +22,10 @@ interface ItemFlairProps {
 }
 
 const ItemContainer = styled.div.attrs(() => ({
-  className: `transition duration-500 ease-in-out bg-white  max-w-md py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5`
-  }))``
+  className: `text-left transition duration-500 ease-in-out bg-white  w-96   h-full  py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5   		`
+  }))`
+    min-width: 28rem;
+  `
 
 const TitleSection = styled.div.attrs(() => ({
     className: `flex flex-1 text-gray-800 text-xl font-semibold flex-row`
@@ -41,7 +43,7 @@ const LinkItem = styled.a.attrs(() => ({
   
 
 const Description = styled.p.attrs(() => ({
-  className: `text-sm text-gray-600`
+  className: `text-xs text-gray-600  `
   }))``
 
 
@@ -76,8 +78,8 @@ const ItemFlair: FC<{type: string}> = ({type}) => {
 export const ProjectItem: FC<ProjectItemProps> = ({item}) => {
   return (
     <ItemContainer>
-      <div>
-        {item?.demo?.url && <img alt={`demogif-${item.name}`}  src={item?.demo?.url}/>}
+      <div style={{display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center',alignItems: 'center' }}>
+        {item?.demo?.url && <img style={{maxHeight: 200}} alt={`demogif-${item.name}`}  src={item?.demo?.url}/>}
         <TitleSection>
           <div>{item.name} </div>
           {!item?.endDate && <ItemFlair type={'active'}/>}

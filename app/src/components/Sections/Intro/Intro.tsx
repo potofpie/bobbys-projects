@@ -67,7 +67,7 @@ export const Intro: FC = () => {
 
                     {links?.profiles?.map((l : any) => 
                         <Tooltip title={l.name} > 
-                            <a href={l.url}> <img className='icon-link w-8 m-2' src={l.networkIcon.url} />   </a> 
+                            <a href={l.url}> <img alt={l.name} className='icon-link w-8 m-2' src={l.networkIcon.url} />   </a> 
                         
                         </Tooltip>)}
                 </div>

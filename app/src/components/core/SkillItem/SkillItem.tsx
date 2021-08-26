@@ -1,27 +1,9 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import Tooltip from '@material-ui/core/Tooltip';
 import Divider from '@material-ui/core/Divider';
 
 
 
-interface ProjectItemArgs {
-  name: string;
-  description: string;
-  githubLink: string;
-  startDate: Date;
-  endDate: Date;
-  url: string;
-  demo: any;
-}
-
-
-interface ItemFlairProps {
-  color : string;
-  message : string;
-
-   
-}
 
 const ItemContainer = styled.div.attrs(() => ({
   className: `text-left transition duration-500 ease-in-out bg-white  max-w-md py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5 w-96 		`
