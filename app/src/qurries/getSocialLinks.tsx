@@ -6,6 +6,9 @@ export const getSocialLinks = gql`
     url
     glitch
     onSite
+    networkIcon {
+      url
+    }
   }
 }
 `;

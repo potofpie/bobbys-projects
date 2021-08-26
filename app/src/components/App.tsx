@@ -29,8 +29,8 @@ export const App: FC = () => {
         </Header>
 
         <Intro/>
-        <Skills/>
         <Projects/>
+        <Skills/>
 
         <Footer>
           Designed & Built by Bobby Christopher © 2021

@@ -6,6 +6,9 @@ export const getDonateLinks = gql`
     url
     glitch
     onSite
+    networkIcon {
+      url
+    }
   }
 }
 `;

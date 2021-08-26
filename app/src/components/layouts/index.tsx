@@ -9,6 +9,8 @@ export const SectionContainer = styled.div.attrs(() => ({
         custom-tan 
         text-black 
         text-center 
+        items-center 
+
         justify-around
     `
     }))``
