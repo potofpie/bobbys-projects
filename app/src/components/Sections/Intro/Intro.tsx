@@ -52,7 +52,6 @@ export const Intro: FC = () => {
                     <ReactMarkdown>
                         {summary?.summaries[0]?.welcometext}
                     </ReactMarkdown>
-                {/* <Divider style={{marginTop: 15}}/> */}
                 </IntroText>
                 <LinksText>
                     Looking for a contractor? 👷‍♂️

@@ -9,7 +9,8 @@ export const SectionContainer = styled.div.attrs(() => ({
         custom-tan 
         text-black 
         text-center 
-        items-center 
+        items-center
+
 
         justify-around
     `
@@ -19,8 +20,9 @@ export const HorizonalSectionItems = styled.div.attrs(() => ({
     className: `
     flex 
     flex-1 
-    flex-row 
+    flex-col 
     justify-center
+    md:flex-row
     items-center 
 
     `
