@@ -44,8 +44,8 @@ const IntroContainer = styled.h3.attrs(() => ({
 
             </IntroContainer>
 
-            </HorizonalSectionItems>
          <UndrawImage src={skillsImage} />
+            </HorizonalSectionItems>
          
 
       </SectionContainer>

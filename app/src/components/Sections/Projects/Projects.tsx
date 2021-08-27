@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import { SectionContainer, UndrawImage } from '../../layouts'
+import { SectionContainer, UndrawImage, HorizonalSectionItems } from '../../layouts'
 import styled  from 'styled-components';
 import { serverImage } from '../../../assets'
 import { getProjects,getDonateLinks } from '../../../qurries'
@@ -39,6 +39,9 @@ export const Projects: FC = () => {
   return (
      <>
       <SectionContainer>
+      <HorizonalSectionItems id='HorizonalSectionItems'>
+
+          
               <UndrawImage src={serverImage} />
          <IntroContainer>
 
@@ -47,6 +50,7 @@ export const Projects: FC = () => {
          </Carousel>
 
          </IntroContainer>
+         </HorizonalSectionItems>
 
          
       </SectionContainer>
