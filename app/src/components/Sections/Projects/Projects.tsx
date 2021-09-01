@@ -32,9 +32,6 @@ const IntroContainer = styled.h3.attrs(() => ({
 export const Projects: FC = () => {
    const {data} = useQuery(getProjects)
    const { data : donateLinks} = useQuery(getDonateLinks)
-   console.log({donateLinks})
-
-
   const projects = data?.projects?.filter((link: any) => link.onSite)
   return (
      <>
