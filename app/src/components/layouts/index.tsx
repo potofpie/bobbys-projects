@@ -10,6 +10,7 @@ export const SectionContainer = styled.div.attrs(() => ({
         text-black 
         text-center 
         items-center
+        mt-20
 
 
         justify-around
