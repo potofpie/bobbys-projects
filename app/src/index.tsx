@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloClient, HttpLink, InMemoryCache, ApolloProvider } from '@apollo/client';
-import './index.scss';
+import './scss/index.scss';
 import { App } from './components/App';
 import { 
       GRAPHCSM_URL,

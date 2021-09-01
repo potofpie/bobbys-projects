@@ -1,31 +1,13 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import styled from 'styled-components';
-
-import { Item } from './Item'
-// import { Modal } from './Modal'
-import {useQuery} from '@apollo/client'
-import { Intro } from './Intro'
-import { Links } from './Links'
-import { getProjects } from '../qurries'
-
-import {terminalButtons, justHacker }  from '../assets';
-
-import { FadeIn } from './FadeIn'
-import './App.scss';
-
+import { Projects,Skills,Intro } from './Sections'
+import {justHackerCircle }  from '../assets';
 
 
 const AppContainer = styled.div.attrs(() => ({
-  className: `flex flex-1 flex-col custom-tan`
+  className: `flex flex-1 flex-col custom-tan justify-center items-center `
   }))``
 
-const Bottom = styled.div.attrs(() => ({
-  className: `flex flex-1 p-2 flex-col items-center overflow-y-scroll` 
-  }))``
-
-const Top = styled.div.attrs(() => ({
-  className: `flex flex-1 custom-purp text-white p-2 text-center`
-  }))``
 
 
 const Footer = styled.div.attrs(() => ({
@@ -34,58 +16,27 @@ const Footer = styled.div.attrs(() => ({
 
 
 const Header = styled.div.attrs(() => ({
-  className: `flex text-center flex-col custom-purp items-end justify-center w-full p-4 h-10`
-  }))``
-
-const TopLeft = styled.div.attrs(() => ({
-  className: `flex flex-1 justify-center items-center`
-  }))``
-
-const TopRight = styled.div.attrs(() => ({
-  className: `flex flex-1 justify-center items-center`
-  }))``
-  
-const Logo = styled.img.attrs(() => ({
-  className: `max-h-80`
+  className: `flex flex-row custom-purp items-center text-white justify-left w-full p-4 h-20 z-50`
   }))`
   `
 
-const TerminalImage = styled.img.attrs(() => ({
-  className: `w-11 z-10`
-  }))`
-  `
 
 export const App: FC = () => {
-  const {data} = useQuery(getProjects)
-  const projects = data?.projects?.filter((link: any) => link.onSite)
   return (
     <>
       <AppContainer>
-        <Header>
-          <TerminalImage src={terminalButtons} alt="logo" />
+        <Header style={{position: 'fixed',top: 0, left: 0}}>
+          <img src={justHackerCircle} alt={'hackerProfile'} style={{height: '100%', margin: 10}}/> <p><b>  Bobby Christopher </b> - Full Stack Software Engineer </p>
         </Header>
-        <Top>
-          <div className="flex flex-1 flex-row	">
-            <TopLeft>
-              <Intro/>
-            </TopLeft>
-            <TopRight >
-            <FadeIn delay={500} duration={450}>
-              <Logo alt={'justHacker'} src={justHacker} />
-            </FadeIn>
-            </TopRight>
-          </div>
-        </Top>
+        <div style={{height: 80, width: '100%', margin: 30}} />
 
 
-        <Bottom>
-          <FadeIn delay={500} duration={450}>
-            {projects?.map((item: any) => <Item item={item}/>)}
-          </FadeIn>
-        </Bottom>
+        <Intro/>
+        <Projects/>
+        <Skills/>
 
         <Footer>
-          <Links/>
+          Designed & Built by Bobby Christopher © 2021
         </Footer>
 
 
