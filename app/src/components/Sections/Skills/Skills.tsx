@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import { useQuery } from '@apollo/client';
-import { SectionContainer, HorizonalSectionItems, UndrawImage } from '../../layouts'
+import { SectionContainer, HorizonalSectionItemsRightSideImage, UndrawImage } from '../../layouts'
 import { getSkills, getSocialLinks } from '../../../qurries';
 import { skillsImage } from '../../../assets'
 import { SkillItem } from '../../core/SkillItem'
@@ -34,7 +34,7 @@ const IntroContainer = styled.h3.attrs(() => ({
        return (
            <>
           <SectionContainer>
-            <HorizonalSectionItems id='HorizonalSectionItems'>
+            <HorizonalSectionItemsRightSideImage id='HorizonalSectionItemsRightSideImage'>
             <IntroContainer>
 
             <Carousel className='h-full'  animation={'slide'}>
@@ -45,7 +45,7 @@ const IntroContainer = styled.h3.attrs(() => ({
             </IntroContainer>
 
          <UndrawImage src={skillsImage} />
-            </HorizonalSectionItems>
+            </HorizonalSectionItemsRightSideImage>
          
 
       </SectionContainer>

@@ -16,17 +16,20 @@ const Footer = styled.div.attrs(() => ({
 
 
 const Header = styled.div.attrs(() => ({
-  className: `flex flex-row custom-purp items-center text-white justify-left w-full p-4 h-20`
-  }))``
+  className: `flex flex-row custom-purp items-center text-white justify-left w-full p-4 h-20 z-50`
+  }))`
+  `
 
 
 export const App: FC = () => {
   return (
     <>
       <AppContainer>
-        <Header>
+        <Header style={{position: 'fixed',top: 0, left: 0}}>
           <img src={justHackerCircle} alt={'hackerProfile'} style={{height: '100%', margin: 10}}/> <p><b>  Bobby Christopher </b> - Full Stack Software Engineer </p>
         </Header>
+        <div style={{height: 80, width: '100%', margin: 30}} />
+
 
         <Intro/>
         <Projects/>

@@ -22,9 +22,9 @@ interface ItemFlairProps {
 }
 
 const ItemContainer = styled.div.attrs(() => ({
-  className: `text-left transition duration-500 ease-in-out bg-white  w-96   h-full  py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5   		`
+  className: `text-left transition duration-500 ease-in-out bg-white  w-96  h-full  py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5   		`
   }))`
-    min-width: 28rem;
+    min-width: 10rem;
   `
 
 const TitleSection = styled.div.attrs(() => ({

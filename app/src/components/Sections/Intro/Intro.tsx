@@ -2,7 +2,7 @@ import { FC } from 'react';
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components';
 import { useQuery } from '@apollo/client';
-import { SectionContainer, HorizonalSectionItems, UndrawImage } from '../../layouts'
+import { SectionContainer, HorizonalSectionItemsRightSideImage, UndrawImage } from '../../layouts'
 import { getSummaries, getFreelancerLinks } from '../../../qurries';
 import { hackerMind } from '../../../assets'
 import Divider from '@material-ui/core/Divider';
@@ -45,7 +45,7 @@ export const Intro: FC = () => {
 
   return (
       <SectionContainer>
-            <HorizonalSectionItems id='HorizonalSectionItems'>
+            <HorizonalSectionItemsRightSideImage id='HorizonalSectionItems'>
             <IntroContainer>
 
                 <IntroText >
@@ -79,7 +79,7 @@ export const Intro: FC = () => {
             </IntroContainer>
 
                 <UndrawImage src={hackerMind} />
-            </HorizonalSectionItems>
+            </HorizonalSectionItemsRightSideImage>
 
       </SectionContainer>
       

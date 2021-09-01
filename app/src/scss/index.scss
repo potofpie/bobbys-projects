@@ -11,7 +11,7 @@
 
 #root, body, html {
   display: flex;
-  height: 275vh;
+  // height: 275vh;
   width: 100vw;
   // background-color: #fefae0;
   margin: 0;
@@ -20,12 +20,11 @@
   background-color: #fefae0;
   // overflow-y: hidden;
   overflow-x: hidden;
-
-
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
+
 
 
 /* width */

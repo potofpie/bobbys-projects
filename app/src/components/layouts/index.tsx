@@ -28,6 +28,33 @@ export const HorizonalSectionItems = styled.div.attrs(() => ({
     `
 }))``
 
+export const HorizonalSectionItemsLeftSideImage = styled.div.attrs(() => ({
+    className: `
+    flex 
+    flex-1 
+    flex-col 
+    justify-center
+    md:flex-row
+    items-center 
+
+    `
+}))``
+
+
+export const HorizonalSectionItemsRightSideImage = styled.div.attrs(() => ({
+    className: `
+    flex 
+    flex-1 
+    flex-col-reverse	 
+
+    justify-center
+    md:flex-row
+    items-center 
+
+    `
+}))``
+
+
 export const SubSectionHorizontal = styled.div.attrs((divider) => ({
     className: `
         flex 
@@ -40,7 +67,10 @@ export const SubSectionHorizontal = styled.div.attrs((divider) => ({
 
 export const UndrawImage = styled.img.attrs(() => ({
     className: `
-        max-h-96
+    md:m-0
+    md:max-h-96
+    max-h-60
+    m-10
     `
 }))``
 
