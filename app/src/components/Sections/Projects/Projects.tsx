@@ -35,51 +35,30 @@ export const Projects: FC = () => {
   const projects = data?.projects?.filter((link: any) => link.onSite)
   return (
      <>
-      <SectionContainer>
-      <HorizonalSectionItemsLeftSideImage id='HorizonalSectionItems'>
+        <SectionContainer>
+            <HorizonalSectionItemsLeftSideImage id='HorizonalSectionItems'>
 
-          
-              <UndrawImage src={serverImage} />
-         <IntroContainer>
-
-         <Carousel className='h-full' animation={'slide'}>
-              {projects?.map((item: any) => <ProjectItem item={item}/>)}
-         </Carousel>
-
-         </IntroContainer>
-         </HorizonalSectionItemsLeftSideImage>
-
-         
-      </SectionContainer>
-                <div className={`
-                        flex 
-                        
-                        flex-col 
-                        justify-center
-                        items-center 
-
-                `}>
- 
-                            <LinksText>
+            
+                <UndrawImage src={serverImage} />
+                <IntroContainer>
+                    <Carousel className='h-full' animation={'slide'}>
+                        {projects?.map((item: any) => <ProjectItem item={item}/>)}
+                    </Carousel>
+                </IntroContainer>
+            </HorizonalSectionItemsLeftSideImage>
+        </SectionContainer>
+        <div className={`flex flex-col justify-center items-center`}>
+            <LinksText>
                Maybe donate to my cloud bills? 🤷‍♂️
                <Divider style={{margin: 10}}/>
-                </LinksText>
-                
-                <div className={`
-                        flex 
-                        
-                        flex-row 
-                        justify-center
-                        items-center 
-
-                `}>
-                    {donateLinks?.profiles?.map((l : any) => 
-                        <Tooltip title={l.name} > 
-                            <a href={l.url}> <img alt={l.name} className='icon-link w-8 m-2' src={l?.networkIcon?.url} />   </a> 
-                        
-                        </Tooltip>)}
-                        </div>
+            </LinksText>    
+            <div className={`flex flex-row justify-center items-center`}>
+                {donateLinks?.profiles?.map((l : any) => 
+                <Tooltip title={l.name} > 
+                        <a href={l.url}> <img alt={l.name} className='icon-link w-8 m-2' src={l?.networkIcon?.url} />   </a> 
+                </Tooltip>)}
             </div>
+        </div>
             </>
       
   );

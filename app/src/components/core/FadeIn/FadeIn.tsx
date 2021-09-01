@@ -18,7 +18,7 @@ interface FadeProps {
   
   
 export const FadeIn: FC<FadeProps> = ({
-duration = 300,
+duration = 1000,
 delay = 0,
 children,
 //  ...delegated

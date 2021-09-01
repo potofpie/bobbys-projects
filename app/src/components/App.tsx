@@ -28,7 +28,8 @@ export const App: FC = () => {
         <Header style={{position: 'fixed',top: 0, left: 0}}>
           <img src={justHackerCircle} alt={'hackerProfile'} style={{height: '100%', margin: 10}}/> <p><b>  Bobby Christopher </b> - Full Stack Software Engineer </p>
         </Header>
-        <div style={{height: 80, width: '100%', margin: 30}} />
+        <div style={{height: 80, width: '100%'}} />
+
 
 
         <Intro/>
