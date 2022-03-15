@@ -21,7 +21,7 @@ const Header = styled.div.attrs(() => ({
   className: `flex flex-row custom-purp items-center text-white justify-left w-full p-4 h-20 z-50`
   }))`
   `
-  const ResumeButton = styled.button.attrs(() => ({
+  const ResumeButton = styled.a.attrs(() => ({
     className: `m-50 p-1 float-left shadow-lg rounded-sm	`
     }))`
       background-color: #8985a8;
@@ -46,7 +46,7 @@ export const App: FC = () => {
           </div>
           <div >
             <RubberBand forever={true}>
-              <ResumeButton>Resumé</ResumeButton>
+              <ResumeButton target="_blank"  href={'https://bobby-christopher.com/resume'}>Resumé</ResumeButton>
             </RubberBand>
           </div>
         </Header>
