@@ -41,7 +41,7 @@ export const App: FC = () => {
             <img src={justHackerCircle} alt={'hackerProfile'} style={{height: '100%', margin: 10}}/> 
             <div style={{display: 'flex', flexDirection: 'row', alignItems:'center', justifyContent:'center', }} >
               <b>  Bobby Christopher </b>  
-               <div className='invisible md:visible' > - Full Stack Software Engineer</div>
+               <div className='invisible md:visible' >  Full Stack Software Engineer</div>
             </div>
           </div>
           <div >
