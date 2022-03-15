@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 
 
 const ItemContainer = styled.div.attrs(() => ({
-  className: `text-left transition duration-500 ease-in-out bg-white h-full  max-w-md py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5 w-96 		`
+  className: `text-left transition duration-500 ease-in-out bg-white h-52 max-w-md py-4 px-8 bg-white shadow-lg hover:shadow-2xl  rounded-lg my-5 lg:mx-5 w-96 		`
   }))``
 
 

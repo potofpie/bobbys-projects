@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 export const getProjects = gql`
 {
-    projects {
+    projects(orderBy: position_ASC){
       name
       description
       githubLink
