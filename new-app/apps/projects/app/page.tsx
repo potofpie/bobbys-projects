@@ -5,13 +5,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@repo/ui/components/ui/avatar";
-import {
-  HomeIcon,
-  BackpackIcon,
-  LinkedInLogoIcon,
-  GitHubLogoIcon,
-  MixIcon,
-} from "@radix-ui/react-icons";
+import { HomeIcon, BackpackIcon } from "@radix-ui/react-icons";
 import { Tabs, TabsList, TabsTrigger } from "@repo/ui/components/ui/tabs";
 import { gql, useQuery } from "@apollo/client";
 import {
