@@ -1,0 +1,30 @@
+
+
+.custom-purp {
+  background-color: #3f3d56;
+  margin: 0;
+}
+
+.custom-tan {
+  background-color: #fefae0;
+  // margin: 0;
+}
+
+.custom-shadow-bottom {
+  box-shadow: 0 100px 100px 0 rgba(63, 61, 86,0.4);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  margin: 5px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+

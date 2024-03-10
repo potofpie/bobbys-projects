@@ -1,0 +1,24 @@
+{
+  "hosting": {
+    "public": "./old/first-5/app/build",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/resume",
+        "function": "resume"
+      },
+      {
+        "source": "/updateResume",
+        "function": "updateResume"
+      },
+      {
+        "source": "/school-portfolio",
+        "destination": "/school/index.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

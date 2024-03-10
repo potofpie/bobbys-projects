@@ -1,6 +1,5 @@
-
 name: Deploy to Firebase Hosting on merge
-'on':
+"on":
   push:
     branches:
       - main
@@ -10,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cd functions && npm ci
-      - run: cd app && npm ci && npm run build\
+      - run: cd app/old/first-5 && npm ci && npm run build\
         env:
           REACT_APP_GRAPHCSM_URL: ${{ secrets.REACT_APP_GRAPHCSM_URL }}
           REACT_APP_APIKEY: ${{ secrets.REACT_APP_APIKEY }}
@@ -20,10 +19,11 @@ jobs:
           REACT_APP_MESSAGINGSENDERID: ${{ secrets.REACT_APP_MESSAGINGSENDERID }}
           REACT_APP_MEASUREMENTID: ${{ secrets.REACT_APP_MEASUREMENTID }}
           REACT_APP_APPID: ${{ secrets.REACT_APP_APPID }}
+      - run: cp -r old/school old/first-5/app/build
       - uses: jonahsnider/firebase-action@1.0.7
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_ID:  ${{ secrets.PROJECT_ID }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
         with:
           args: deploy
       - name: Curl the update webhook.
