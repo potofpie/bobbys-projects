@@ -12,7 +12,7 @@
         "function": "updateResume"
       },
       {
-        "source": "/school-portfolio",
+        "source": "/school",
         "destination": "/school/index.html"
       },
       {
