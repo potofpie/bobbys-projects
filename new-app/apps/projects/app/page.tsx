@@ -15,14 +15,16 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 import { ExperienceCard, Experience } from "@repo/ui/components/ui/ProjectCard";
+
 import { useState } from "react";
 
 const EXPERIENCES_ALL = gql`
   {
-    experiences(orderBy: position_ASC, where: { AND: { show: true } }) {
+    experiences(orderBy: date_DESC, where: { AND: { show: true } }) {
       name
       description
       link
+      active
       icon {
         url
       }
@@ -33,13 +35,11 @@ const EXPERIENCES_ALL = gql`
 
 const EXPERIENCES_FILTERED = gql`
   query Experiences($tag: ExperienceTag!) {
-    experiences(
-      orderBy: position_ASC
-      where: { AND: { show: true, tag: $tag } }
-    ) {
+    experiences(orderBy: date_DESC, where: { AND: { show: true, tag: $tag } }) {
       name
       description
       link
+      active
       icon {
         url
       }
@@ -47,6 +47,17 @@ const EXPERIENCES_FILTERED = gql`
     }
   }
 `;
+
+const sortActiveProjectsFirst = (experiences?: Experience[]) => {
+  if (!experiences) {
+    return [];
+  }
+  const activeProjects = experiences.filter((experience) => experience.active);
+  const inactiveProjects = experiences.filter(
+    (experience) => !experience.active,
+  );
+  return activeProjects.concat(inactiveProjects);
+};
 
 const AboutSection = () => {
   return (
@@ -149,7 +160,7 @@ const ProjectSection = () => {
         </TabsList>
       </Tabs>
       <div className="flex flex-1 w-full gap-5 flex-col overflow-y md:grid md:grid-cols-2">
-        {data?.experiences?.map((e) => {
+        {sortActiveProjectsFirst(data?.experiences).map((e) => {
           return <ExperienceCard experience={e} />;
         })}
       </div>

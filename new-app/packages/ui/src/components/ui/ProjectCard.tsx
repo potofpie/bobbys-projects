@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Card } from "./card";
 import { Badge } from "./badge";
-import { Link1Icon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import { NewFlair } from "./Flair";
 
 export interface Experience {
   tag?: string;
@@ -13,6 +13,7 @@ export interface Experience {
   description: string;
   link?: string;
   show?: boolean;
+  active: boolean;
   position?: number;
 }
 
@@ -31,6 +32,7 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
               src={experience?.icon?.url}
             />
             <div>{experience?.name}</div>
+            {experience.active ? <NewFlair /> : <></>}
           </div>
           <Badge className="text-[8px] ">{experience?.tag}</Badge>
         </div>
