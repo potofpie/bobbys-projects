@@ -19,7 +19,7 @@ jobs:
       #     REACT_APP_MESSAGINGSENDERID: ${{ secrets.REACT_APP_MESSAGINGSENDERID }}
       #     REACT_APP_MEASUREMENTID: ${{ secrets.REACT_APP_MEASUREMENTID }}
       #     REACT_APP_APPID: ${{ secrets.REACT_APP_APPID }}
-      - run: cp -r ./old/school ./old/first-5/app/build
+      - run: cp -r ./old/school ./old/first-5/build
       - uses: jonahsnider/firebase-action@1.0.7
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
