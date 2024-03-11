@@ -20,7 +20,11 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
-import { ExperienceCard, Experience } from "@repo/ui/components/ui/ProjectCard";
+import {
+  ExperienceCard,
+  ExperienceCardLoading,
+  Experience,
+} from "@repo/ui/components/ui/ExperienceCard";
 
 import { useState } from "react";
 import { cn } from "@repo/ui/lib/utils";
@@ -201,15 +205,25 @@ const ProjectSection = () => {
         </TabsList>
       </Tabs>
       <div className="flex flex-1 w-full gap-5 flex-col overflow-y lg:grid lg:grid-cols-2">
-        {sortActiveProjectsFirst(data?.experiences).map((e) => {
-          return <ExperienceCard experience={e} />;
-        })}
+        {loading ? (
+          <>
+            <ExperienceCardLoading />
+            <ExperienceCardLoading />
+            <ExperienceCardLoading />
+            <ExperienceCardLoading />
+            <ExperienceCardLoading />
+            <ExperienceCardLoading />
+            <ExperienceCardLoading />
+            <ExperienceCardLoading />
+          </>
+        ) : (
+          sortActiveProjectsFirst(data?.experiences).map((e) => {
+            return <ExperienceCard experience={e} />;
+          })
+        )}
       </div>
 
       <div className="flex w-full items-center justify-center text-xs p-4 flex-col gap-4">
-        <p className="font-thin">
-          Built with 💊s by Bobby Christopher © 2024{" "}
-        </p>
         <LinksSection className="md:invisible md:h-0 " />
         <div></div>
       </div>
@@ -227,10 +241,17 @@ export default function Page() {
   });
 
   return (
-    <main className="flex flex-col md:flex-row justify-around max-w-[1500px]">
+    <main className="flex flex-col flex-1 size-full">
       <ApolloProvider client={client}>
-        <AboutSection />
-        <ProjectSection />
+        <div className="flex flex-col md:flex-row justify-around max-w-[1500px]">
+          <AboutSection />
+          <ProjectSection />
+        </div>
+        <div className="w-full flex flex-1 justify-end items-end">
+          <p className="font-thin text-xs p-4">
+            Built with 💊s by Bobby Christopher © 2024
+          </p>
+        </div>
       </ApolloProvider>
     </main>
   );

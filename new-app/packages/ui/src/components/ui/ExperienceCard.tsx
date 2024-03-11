@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Card } from "./card";
 import { Badge } from "./badge";
 import { NewFlair } from "./Flair";
+import { Skeleton } from "./skeleton";
 
 export interface Experience {
   tag?: string;
@@ -41,5 +42,25 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         </div>
       </Card>
     </a>
+  );
+};
+
+export const ExperienceCardLoading = () => {
+  return (
+    <Card className="group flex flex-col flex-1 p-3 gap-2 overflow-hidden h-24 md:h-28 hover:scale-[1.02] transform transition duration-y">
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-start items-center gap-2">
+          <Skeleton className="rounded-full w-10 h-10" />
+
+          <div>
+            <Skeleton className="h-6 w-24" />
+          </div>
+        </div>
+      </div>
+      <div className="text-xs font-extralight px-2 text-gray-600 flex gap-2 flex-col">
+        <Skeleton className="h-2 w-full" />
+        <Skeleton className="h-2 w-full" />
+      </div>
+    </Card>
   );
 };

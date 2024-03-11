@@ -21,7 +21,7 @@ export default function RootLayout({
         <link rel="icon" href="." />
       </Head>
 
-      <body className="bg-paper p-4 md:p-10">{children}</body>
+      <body className="bg-paper p-4 md:p-10 size-full">{children}</body>
     </html>
   );
 }
