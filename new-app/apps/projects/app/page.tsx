@@ -159,7 +159,7 @@ const ProjectSection = () => {
           </TabsTrigger>
         </TabsList>
       </Tabs>
-      <div className="flex flex-1 w-full gap-5 flex-col overflow-y md:grid md:grid-cols-2">
+      <div className="flex flex-1 w-full gap-5 flex-col overflow-y lg:grid lg:grid-cols-2">
         {sortActiveProjectsFirst(data?.experiences).map((e) => {
           return <ExperienceCard experience={e} />;
         })}
@@ -178,7 +178,7 @@ export default function Page() {
   });
 
   return (
-    <main className="flex flex-col md:flex-row justify-around">
+    <main className="flex flex-col md:flex-row justify-around max-w-[1500px]">
       <ApolloProvider client={client}>
         <AboutSection />
         <ProjectSection />
