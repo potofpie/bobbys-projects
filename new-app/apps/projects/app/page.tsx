@@ -247,7 +247,7 @@ export default function Page() {
           <AboutSection />
           <ProjectSection />
         </div>
-        <div className="w-full flex flex-1 justify-end items-end">
+        <div className="w-full flex flex-1 justify-center items-end">
           <p className="font-thin text-xs p-4">
             Built with 💊s by Bobby Christopher © 2024
           </p>
