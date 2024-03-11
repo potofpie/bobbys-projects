@@ -5,7 +5,13 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@repo/ui/components/ui/avatar";
-import { HomeIcon, BackpackIcon } from "@radix-ui/react-icons";
+import {
+  HomeIcon,
+  BackpackIcon,
+  ReaderIcon,
+  LinkedInLogoIcon,
+  GitHubLogoIcon,
+} from "@radix-ui/react-icons";
 import { Tabs, TabsList, TabsTrigger } from "@repo/ui/components/ui/tabs";
 import { gql, useQuery } from "@apollo/client";
 import {
@@ -17,6 +23,13 @@ import {
 import { ExperienceCard, Experience } from "@repo/ui/components/ui/ProjectCard";
 
 import { useState } from "react";
+import { cn } from "@repo/ui/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@repo/ui/components/ui/tooltip";
 
 const EXPERIENCES_ALL = gql`
   {
@@ -59,6 +72,40 @@ const sortActiveProjectsFirst = (experiences?: Experience[]) => {
   return activeProjects.concat(inactiveProjects);
 };
 
+const LinksSection = ({ className }: { className: string }) => {
+  return (
+    <div
+      className={cn([
+        "flex w-full flex-row gap-5 justify-center items-center",
+        className,
+      ])}
+    >
+      <a target="_blank" href="https://github.com/potofpie">
+        <GitHubLogoIcon className="size-8 text-primary hover:text-primary/80" />
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/bobbychristopher/">
+        <LinkedInLogoIcon className="size-8 text-primary hover:text-primary/80" />
+      </a>
+
+      <TooltipProvider>
+        <Tooltip delayDuration={200}>
+          <TooltipTrigger>
+            <a
+              target="_blank"
+              href="https://nasmi3udsrfb4kop.public.blob.vercel-storage.com/resume.pdf"
+            >
+              <ReaderIcon className="size-8 text-primary hover:text-primary/80" />
+            </a>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            <p>Resumè</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>
+  );
+};
+
 const AboutSection = () => {
   return (
     <div className="flex flex-col gap-4 items-start justify-start md:items-start">
@@ -98,10 +145,7 @@ const AboutSection = () => {
         </a>
         ! 💌
       </p>
-      {/* <div className="flex w-full flex-row gap-5 justify-center items-center">
-        <GitHubLogoIcon className="size-8 text-primary hover:text-primary/80" />
-        <LinkedInLogoIcon className="size-8 text-primary hover:text-primary/80" />
-      </div> */}
+      <LinksSection className="collapse h-0  md:h-fit md:visible mt-2 " />
     </div>
   );
 };
@@ -126,9 +170,6 @@ const ProjectSection = () => {
           >
             All
           </TabsTrigger>
-          {/* <TabsTrigger onClick={() => setTag("active")} value="active">
-            Active
-          </TabsTrigger> */}
           <TabsTrigger
             className="w-16"
             onClick={() => setTag("job")}
@@ -163,6 +204,14 @@ const ProjectSection = () => {
         {sortActiveProjectsFirst(data?.experiences).map((e) => {
           return <ExperienceCard experience={e} />;
         })}
+      </div>
+
+      <div className="flex w-full items-center justify-center text-xs p-4 flex-col gap-4">
+        <p className="font-thin">
+          Built with 💊s by Bobby Christopher © 2024{" "}
+        </p>
+        <LinksSection className="md:invisible md:h-0 " />
+        <div></div>
       </div>
     </div>
   );
