@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "./old/first-5/app/build",
+    "public": "./build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
