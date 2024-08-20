@@ -4,6 +4,7 @@ import { Card } from "./card";
 import { Badge } from "./badge";
 import { NewFlair } from "./Flair";
 import { Skeleton } from "./skeleton";
+import ProjectLineChart from "./ProjectLineChart";
 
 export interface Experience {
   tag?: string;
@@ -20,12 +21,17 @@ export interface Experience {
 
 interface ExperienceCardProps {
   experience: Experience;
+  chart?: boolean;
 }
 
-export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
+export const ExperienceCard = ({
+  experience,
+  chart = false,
+}: ExperienceCardProps) => {
   return (
     <a target="_blank" href={experience?.link}>
       <Card className="group flex flex-col flex-1 p-3 gap-2 overflow-hidden h-24 md:h-28 hover:scale-[1.02] transform transition duration-y">
+        {experience.name === "Controller Lab" ? <ProjectLineChart /> : <> </>}
         <div className="flex flex-row justify-between">
           <div className="flex flex-row justify-start items-center gap-2">
             <img
