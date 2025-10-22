@@ -90,6 +90,21 @@ const LinksSection = ({ className }: { className: string }) => {
       <a target="_blank" href="https://www.linkedin.com/in/bobbychristopher/">
         <LinkedInLogoIcon className="size-8 text-primary hover:text-primary/80" />
       </a>
+      <a target="_blank" href="https://hackaday.io/potofpie">
+        <img
+          src="/hackaday.png"
+          alt="Hackaday"
+          className="size-8 hover:opacity-80"
+        />
+      </a>
+      <a target="_blank" href="https://potofpie.itch.io">
+        <img
+          src="/itch.png"
+          alt="Hackaday"
+          className="size-8 hover:opacity-80"
+        />
+      </a>
+
 
       <TooltipProvider>
         <Tooltip delayDuration={200}>
